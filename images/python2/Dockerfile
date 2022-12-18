@@ -1,4 +1,6 @@
-FROM alpine:3.17.0
+ARG ALPINE_VERSION
+
+FROM alpine:${ALPINE_VERSION}
 
 RUN set -eux; \
     repositories="$(cat /etc/apk/repositories)"; \

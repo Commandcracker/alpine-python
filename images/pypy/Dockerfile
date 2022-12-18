@@ -1,9 +1,11 @@
-FROM alpine-pypy2-pycparser:3.17.0 as builder
+ARG BASE_IMAGE
 
-ENV \
-	PYTHON_VERSION=3.9 \
-	PYPY_VERSION=7.3.10 \
-	PYPY_SHA256SUM=241f5a22cd2e5eb8a80d41f5c449e6c5978a144390e1e22679a35a30ce328f6c
+FROM ${BASE_IMAGE} as builder
+
+ARG \
+	PYTHON_VERSION \
+	PYPY_VERSION \
+	PYPY_SHA256SUM
 
 RUN set -eux; \
 	apk add --no-cache \
@@ -36,11 +38,12 @@ RUN set -eux; \
 	rm pypy.tar.bz2; \
 	# build pypy
 	cd /opt/pypy_src/pypy/goal; \
-	if which pypy&>/dev/null;then RUNINTERP=pypy;else RUNINTERP=python;fi; \
-	$RUNINTERP ../../rpython/bin/rpython --opt=jit; \
-	$RUNINTERP /opt/pypy_src/pypy/tool/release/package.py --archive-name pypy --builddir /opt/pypy_build
+	python ../../rpython/bin/rpython --opt=jit; \
+	python /opt/pypy_src/pypy/tool/release/package.py --archive-name pypy --builddir /opt/pypy_build
 
-FROM alpine:3.17.0
+ARG ALPINE_VERSION
+
+FROM alpine:${ALPINE_VERSION}
 
 RUN set -eux; \
 	apk add --no-cache \

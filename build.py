@@ -258,7 +258,11 @@ def main() -> None:
             },
             "tags": [
                 f"pip-{python2_pip_version}",
-                f"{ALPINE_VERSION}-pip-{python2_pip_version}"
+                f"{ALPINE_VERSION}-pip-{python2_pip_version}",
+                f"pypy-{pypy_version}",
+                f"{ALPINE_VERSION}-pypy-{pypy_version}"
+                f"pypy-{pypy_version}-pip-{python2_pip_version}"
+                f"{ALPINE_VERSION}-pypy-{pypy_version}-pip-{python2_pip_version}"
             ]
         },
         "alpine-pypy2-pycparser": {
@@ -274,7 +278,11 @@ def main() -> None:
             },
             "tags": [
                 f"pycparser-{pycparser_version}",
-                f"{ALPINE_VERSION}-pycparser-{pycparser_version}"
+                f"{ALPINE_VERSION}-pycparser-{pycparser_version}",
+                f"pypy-{pypy_version}",
+                f"{ALPINE_VERSION}-pypy-{pypy_version}"
+                f"pypy-{pypy_version}-pycparser-{pycparser_version}"
+                f"{ALPINE_VERSION}-pypy-{pypy_version}-pycparser-{pycparser_version}"
             ]
         },
         # pypy3.8
@@ -302,7 +310,11 @@ def main() -> None:
             },
             "tags": [
                 f"pip-{python3_pip_version}",
-                f"{ALPINE_VERSION}-pip-{python3_pip_version}"
+                f"{ALPINE_VERSION}-pip-{python3_pip_version}",
+                f"pypy-{pypy_version}",
+                f"{ALPINE_VERSION}-pypy-{pypy_version}"
+                f"pypy-{pypy_version}-pip-{python3_pip_version}"
+                f"{ALPINE_VERSION}-pypy-{pypy_version}-pip-{python3_pip_version}"
             ]
         },
         # pypy3.9
@@ -330,7 +342,11 @@ def main() -> None:
             },
             "tags": [
                 f"pip-{python3_pip_version}",
-                f"{ALPINE_VERSION}-pip-{python3_pip_version}"
+                f"{ALPINE_VERSION}-pip-{python3_pip_version}",
+                f"pypy-{pypy_version}",
+                f"{ALPINE_VERSION}-pypy-{pypy_version}"
+                f"pypy-{pypy_version}-pip-{python3_pip_version}"
+                f"{ALPINE_VERSION}-pypy-{pypy_version}-pip-{python3_pip_version}"
             ]
         }
     }

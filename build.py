@@ -207,7 +207,7 @@ def main() -> None:
         "alpine-python2-pip": {
             "path": "images/pip",
             "args": {
-                "BASE_IMAGE": "alpine-python2",
+                "BASE_IMAGE": f"alpine-python2:{ALPINE_VERSION}",
                 "PIP_WHL": python2_pip_whl_name,
                 "PIP_SHA256": python2_pip_sha256,
                 "PIP_URL": python2_pip_downlaod_url
@@ -220,7 +220,7 @@ def main() -> None:
         "alpine-python2-pycparser": {
             "path": "images/whl",
             "args": {
-                "BASE_IMAGE": "alpine-python2",
+                "BASE_IMAGE": f"alpine-python2:{ALPINE_VERSION}",
                 "PIP_WHL": python2_pip_whl_name,
                 "PIP_SHA256": python2_pip_sha256,
                 "PIP_URL": python2_pip_downlaod_url,
@@ -237,7 +237,7 @@ def main() -> None:
         "alpine-pypy2": {
             "path": "images/pypy",
             "args": {
-                "BASE_IMAGE": "alpine-python2-pycparser",
+                "BASE_IMAGE": f"alpine-python2-pycparser:{ALPINE_VERSION}",
                 "PYTHON_VERSION": "2.7",
                 "PYPY_VERSION": pypy_version,
                 "PYPY_SHA256SUM": pypy2_7_sha256,
@@ -251,7 +251,7 @@ def main() -> None:
         "alpine-pypy2-pip": {
             "path": "images/pip",
             "args": {
-                "BASE_IMAGE": "alpine-pypy2",
+                "BASE_IMAGE": f"alpine-pypy2:{ALPINE_VERSION}",
                 "PIP_WHL": python2_pip_whl_name,
                 "PIP_SHA256": python2_pip_sha256,
                 "PIP_URL": python2_pip_downlaod_url
@@ -268,7 +268,7 @@ def main() -> None:
         "alpine-pypy2-pycparser": {
             "path": "images/whl",
             "args": {
-                "BASE_IMAGE": "alpine-pypy2",
+                "BASE_IMAGE": f"alpine-pypy2:{ALPINE_VERSION}",
                 "PIP_WHL": python2_pip_whl_name,
                 "PIP_SHA256": python2_pip_sha256,
                 "PIP_URL": python2_pip_downlaod_url,
@@ -289,7 +289,7 @@ def main() -> None:
         "alpine-pypy3.8": {
             "path": "images/pypy",
             "args": {
-                "BASE_IMAGE": "alpine-pypy2-pycparser",
+                "BASE_IMAGE": f"alpine-pypy2-pycparser:{ALPINE_VERSION}",
                 "PYTHON_VERSION": "3.8",
                 "PYPY_VERSION": pypy_version,
                 "PYPY_SHA256SUM": pypy3_8_sha256,
@@ -303,7 +303,7 @@ def main() -> None:
         "alpine-pypy3.8-pip": {
             "path": "images/pip",
             "args": {
-                "BASE_IMAGE": "alpine-pypy3.8",
+                "BASE_IMAGE": f"alpine-pypy3.8:{ALPINE_VERSION}",
                 "PIP_WHL": python3_pip_whl_name,
                 "PIP_SHA256": python3_pip_sha256,
                 "PIP_URL": python3_pip_downlaod_url
@@ -321,7 +321,7 @@ def main() -> None:
         "alpine-pypy3.9": {
             "path": "images/pypy",
             "args": {
-                "BASE_IMAGE": "alpine-pypy2-pycparser",
+                "BASE_IMAGE": f"alpine-pypy2-pycparser:{ALPINE_VERSION}",
                 "PYTHON_VERSION": "3.9",
                 "PYPY_VERSION": pypy_version,
                 "PYPY_SHA256SUM": pypy3_9_sha256,
@@ -335,7 +335,7 @@ def main() -> None:
         "alpine-pypy3.9-pip": {
             "path": "images/pip",
             "args": {
-                "BASE_IMAGE": "alpine-pypy3.9",
+                "BASE_IMAGE": f"alpine-pypy3.9:{ALPINE_VERSION}",
                 "PIP_WHL": python3_pip_whl_name,
                 "PIP_SHA256": python3_pip_sha256,
                 "PIP_URL": python3_pip_downlaod_url

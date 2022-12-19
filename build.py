@@ -15,7 +15,15 @@ class Command(list):
         super().__init__([*args])
 
     def run(self, prefix: str = "", suffix: str = "") -> None:
-        system(f"{prefix}{self}{suffix}")
+        command = f"{prefix}{self}{suffix}"
+        print(
+            Colours.Foreground.BRIGHT_BLACK +
+            "Runnig command: \"" +
+            command + "\"" +
+            Colours.RESET,
+            flush=True
+        )
+        system(command)
 
     def add(self, *args: str) -> None:
         super().extend(args)

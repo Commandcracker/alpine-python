@@ -17,18 +17,32 @@ Python docker images for Alpine Linux
 
 ## Tags
 
-`*:latest` \
-`*:${ALPINE_VERSION}`
+### All
 
-`alpine-pypy*:pypy-${PYPY_VERSION}` \
-`alpine-pypy*:${ALPINE_VERSION}-pypy-${PYPY_VERSION}`
+`latest` \
+`${ALPINE_VERSION}`
 
-`alpine-*-pip:pip-${PIP_VERSION}` \
-`alpine-*-pip:${ALPINE_VERSION}-pip-${PIP_VERSION}` \
-`alpine-pypy*-pip:pypy-${PYPY_VERSION}-pip-${PIP_VERSION}` \
-`alpine-pypy*-pip:${ALPINE_VERSION}-pypy-${PYPY_VERSION}-pip-${PIP_VERSION}`
+### Any pypy
 
-`alpine-*-pycparser:pycparser-${PYCPARSER_VERSION}` \
-`alpine-*-pycparser:${ALPINE_VERSION}-pycparser-${PYCPARSER_VERSION}` \
-`alpine-pypy*-pycparser:pypy-${PYPY_VERSION}-pycparser-${PYCPARSER_VERSION}` \
-`alpine-pypy*-pycparser:${ALPINE_VERSION}-pypy-${PYPY_VERSION}-pycparser-${PYCPARSER_VERSION}`
+`pypy-${PYPY_VERSION}` \
+`${ALPINE_VERSION}-pypy-${PYPY_VERSION}`
+
+### Any pip
+
+`pip-${PIP_VERSION}` \
+`${ALPINE_VERSION}-pip-${PIP_VERSION}`
+
+### Any pypy with pip
+
+`pypy-${PYPY_VERSION}-pip-${PIP_VERSION}` \
+`${ALPINE_VERSION}-pypy-${PYPY_VERSION}-pip-${PIP_VERSION}`
+
+### Any pycparser
+
+`pycparser-${PYCPARSER_VERSION}` \
+`${ALPINE_VERSION}-pycparser-${PYCPARSER_VERSION}`
+
+### Any pypy with pycparser
+
+`pypy-${PYPY_VERSION}-pycparser-${PYCPARSER_VERSION}` \
+`${ALPINE_VERSION}-pypy-${PYPY_VERSION}-pycparser-${PYCPARSER_VERSION}`

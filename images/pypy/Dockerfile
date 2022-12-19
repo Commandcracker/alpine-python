@@ -1,4 +1,5 @@
 ARG BASE_IMAGE
+ARG ALPINE_VERSION
 
 FROM ${BASE_IMAGE} as builder
 
@@ -40,8 +41,6 @@ RUN set -eux; \
 	cd /opt/pypy_src/pypy/goal; \
 	python ../../rpython/bin/rpython --opt=jit; \
 	python /opt/pypy_src/pypy/tool/release/package.py --archive-name pypy --builddir /opt/pypy_build
-
-ARG ALPINE_VERSION
 
 FROM alpine:${ALPINE_VERSION}
 

@@ -182,12 +182,12 @@ def main() -> None:
         "commandcracker"
     ).lower()
 
-    ALPINE_VERSION = "3.17.0"
+    ALPINE_VERSION = "3.17.1"
 
-    pypy_version = "7.3.10"
-    pypy2_7_sha256 = "55703da5a49021b7f0e134fc4ced26b26ca09ca95b66803f29a06aa06f3cf3fb"
-    pypy3_8_sha256 = "349ca52c4a4f85ea0fbd82b74bf6b574f8c4105e51cb8915d5ed858fbda45491"
-    pypy3_9_sha256 = "241f5a22cd2e5eb8a80d41f5c449e6c5978a144390e1e22679a35a30ce328f6c"
+    pypy_version = "7.3.11"
+    pypy2_7_sha256 = "d5e5ea4b5a834d745d96a71f0f906b62dfbde03ad858c62239b1f4615636702c"
+    pypy3_8_sha256 = "35786fd68e58330a888adc4c1edc65f4d67d47d21cf090bad406196403f4adcf"
+    pypy3_9_sha256 = "bbcde915026247c3ce630d6fd0c57aa6a4a34a49e000797611c7cf934178724e"
 
     python2_pip_version = "20.3.4"
     python2_pip_sha256 = "217ae5161a0e08c0fb873858806e3478c9775caffce5168b50ec885e358c199d"

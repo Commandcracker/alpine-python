@@ -81,7 +81,7 @@ def get_pypy_archive_sha256(python_version: str, pypy_version: str):
     return sha256(
         urlopen(
             f"https://foss.heptapod.net/pypy/pypy/-/archive/release-pypy{python_version}-v{pypy_version}/pypy-release-pypy{python_version}-v{pypy_version}.tar.bz2",
-            timeout=20
+            timeout=25
         ).read()
     ).hexdigest()
 

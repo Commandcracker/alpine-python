@@ -182,12 +182,13 @@ def main() -> None:
         "commandcracker"
     ).lower()
 
-    ALPINE_VERSION = "3.17.3"
+    ALPINE_VERSION = "3.18.2"
 
-    pypy_version = "7.3.11"
-    pypy2_7_sha256 = "d5e5ea4b5a834d745d96a71f0f906b62dfbde03ad858c62239b1f4615636702c"
+    pypy_version = "7.3.12"
+    pypy2_7_sha256 = "75cf675248d0b09bab4de8fc237ee2489f3f8caee77b0e3ef530cf4aac03d445"
     pypy3_8_sha256 = "35786fd68e58330a888adc4c1edc65f4d67d47d21cf090bad406196403f4adcf"
-    pypy3_9_sha256 = "bbcde915026247c3ce630d6fd0c57aa6a4a34a49e000797611c7cf934178724e"
+    pypy3_9_sha256 = "52857411c710cd9aced93687cf53f5cfada18cb2a4c43ffa4c83ef27c7a3b58e"
+    pypy3_10_sha256 = "3a8cca1d37c2bcfcb788ed06cdda414e78748034c04b0dfd42e239fc0e4edcbb"
 
     python2_pip_version = "20.3.4"
     python2_pip_sha256 = "217ae5161a0e08c0fb873858806e3478c9775caffce5168b50ec885e358c199d"
@@ -299,13 +300,13 @@ def main() -> None:
             "args": {
                 "BASE_IMAGE": "alpine-pypy2.7-pycparser",
                 "PYTHON_VERSION": "3.8",
-                "PYPY_VERSION": pypy_version,
+                "PYPY_VERSION": "7.3.11",
                 "PYPY_SHA256SUM": pypy3_8_sha256,
                 "ALPINE_VERSION": ALPINE_VERSION
             },
             "tags": [
-                f"pypy-{pypy_version}",
-                f"{ALPINE_VERSION}-pypy-{pypy_version}"
+                "pypy-7.3.11",
+                f"{ALPINE_VERSION}-pypy-7.3.11"
             ]
         },
         "alpine-pypy3.8-pip": {
@@ -319,10 +320,10 @@ def main() -> None:
             "tags": [
                 f"pip-{python3_pip_version}",
                 f"{ALPINE_VERSION}-pip-{python3_pip_version}",
-                f"pypy-{pypy_version}",
-                f"{ALPINE_VERSION}-pypy-{pypy_version}",
-                f"pypy-{pypy_version}-pip-{python3_pip_version}",
-                f"{ALPINE_VERSION}-pypy-{pypy_version}-pip-{python3_pip_version}"
+                "pypy-7.3.11",
+                f"{ALPINE_VERSION}-pypy-7.3.11",
+                f"pypy-7.3.11-pip-{python3_pip_version}",
+                f"{ALPINE_VERSION}-pypy-7.3.11-pip-{python3_pip_version}"
             ]
         },
         # pypy3.9
@@ -344,6 +345,38 @@ def main() -> None:
             "path": "images/pip",
             "args": {
                 "BASE_IMAGE": "alpine-pypy3.9",
+                "PIP_WHL": python3_pip_whl_name,
+                "PIP_SHA256": python3_pip_sha256,
+                "PIP_URL": python3_pip_downlaod_url
+            },
+            "tags": [
+                f"pip-{python3_pip_version}",
+                f"{ALPINE_VERSION}-pip-{python3_pip_version}",
+                f"pypy-{pypy_version}",
+                f"{ALPINE_VERSION}-pypy-{pypy_version}",
+                f"pypy-{pypy_version}-pip-{python3_pip_version}",
+                f"{ALPINE_VERSION}-pypy-{pypy_version}-pip-{python3_pip_version}"
+            ]
+        },
+        # alpine-pypy3.10
+        "alpine-pypy3.10": {
+            "path": "images/pypy",
+            "args": {
+                "BASE_IMAGE": "alpine-pypy2.7-pycparser",
+                "PYTHON_VERSION": "3.10",
+                "PYPY_VERSION": pypy_version,
+                "PYPY_SHA256SUM": pypy3_10_sha256,
+                "ALPINE_VERSION": ALPINE_VERSION
+            },
+            "tags": [
+                f"pypy-{pypy_version}",
+                f"{ALPINE_VERSION}-pypy-{pypy_version}"
+            ]
+        },
+        "alpine-pypy3.10-pip": {
+            "path": "images/pip",
+            "args": {
+                "BASE_IMAGE": "alpine-pypy3.10",
                 "PIP_WHL": python3_pip_whl_name,
                 "PIP_SHA256": python3_pip_sha256,
                 "PIP_URL": python3_pip_downlaod_url

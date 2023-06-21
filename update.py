@@ -94,8 +94,9 @@ ALPINE_VERSION = "{get_latest_alpine()}"
 
 pypy_version = "{latest_pypy}"
 pypy2_7_sha256 = "{get_pypy_archive_sha256("2.7", latest_pypy)}"
-pypy3_8_sha256 = "{get_pypy_archive_sha256("3.8", latest_pypy)}"
+pypy3_8_sha256 = "{get_pypy_archive_sha256("3.8", "7.3.11")}"
 pypy3_9_sha256 = "{get_pypy_archive_sha256("3.9", latest_pypy)}"
+pypy3_10_sha256 = "{get_pypy_archive_sha256("3.10", latest_pypy)}"
 
 python2_pip_version = "20.3.4"
 python2_pip_sha256 = "217ae5161a0e08c0fb873858806e3478c9775caffce5168b50ec885e358c199d"

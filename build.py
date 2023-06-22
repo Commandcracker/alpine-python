@@ -14,7 +14,7 @@ class Command(list):
     def __init__(self, *args) -> None:
         super().__init__([*args])
 
-    def run(self, prefix: str = "", suffix: str = "") -> None:
+    def run(self, prefix: str = "", suffix: str = "") -> int:
         command = f"{prefix}{self}{suffix}"
         print(
             Colours.Foreground.BRIGHT_BLACK +
@@ -23,7 +23,7 @@ class Command(list):
             Colours.RESET,
             flush=True
         )
-        system(command)
+        return system(command)
 
     def add(self, *args: str) -> None:
         super().extend(args)
@@ -40,9 +40,9 @@ class BuildCommand(Command):
         self.path = path
         super().__init__("docker", "build")
 
-    def run(self) -> None:
+    def run(self) -> int:
         chdir(join(CWD, self.path))
-        super().run(suffix=" .")
+        return super().run(suffix=" .")
 
     def add_tag(self, tag: str) -> None:
         self.add("--tag", tag)
@@ -72,6 +72,9 @@ class MultiPush:
             PushCommand(image).run()
 
 
+class BuildFailedError(Exception):
+    pass
+
 class Image:
     def __init__(self, name: str, path: str, remotes: list = None) -> None:
         self.tags = []
@@ -99,7 +102,8 @@ class Image:
                 for tag in self.tags:
                     build_command.add_tag(f"{remote}/{self.name}:{tag}")
 
-        build_command.run()
+        if build_command.run() != 0:
+            raise BuildFailedError()
 
     def push(self):
         multi_push = MultiPush()

@@ -33,14 +33,14 @@ RUN set -eux; \
 	tar; \
 	# download pypy
 	wget -O pypy.tar.bz2 "https://foss.heptapod.net/pypy/pypy/-/archive/release-pypy${PYTHON_VERSION}-v${PYPY_VERSION}/pypy-release-pypy${PYTHON_VERSION}-v${PYPY_VERSION}.tar.bz2"; \
-	echo "$PYPY_SHA256SUM *pypy.tar.bz2" | sha256sum -c -; \
+	echo "$PYPY_SHA256SUM pypy.tar.bz2" | sha256sum -c -; \
 	mkdir -p /opt/pypy_src; \
 	tar -xjC /opt/pypy_src --strip-components=1 -f pypy.tar.bz2; \
 	rm pypy.tar.bz2; \
 	# build pypy
 	cd /opt/pypy_src/pypy/goal; \
-	python ../../rpython/bin/rpython --opt=jit; \
-	python /opt/pypy_src/pypy/tool/release/package.py --archive-name pypy --builddir /opt/pypy_build
+	python2 ../../rpython/bin/rpython --opt=jit; \
+	python2 /opt/pypy_src/pypy/tool/release/package.py --archive-name pypy --builddir /opt/pypy_build
 
 FROM alpine:${ALPINE_VERSION}
 

@@ -186,23 +186,23 @@ def main() -> None:
         "commandcracker"
     ).lower()
 
-    ALPINE_VERSION = "3.18.2"
+    ALPINE_VERSION = "3.19.0"
 
-    pypy_version = "7.3.12"
-    pypy2_7_sha256 = "75cf675248d0b09bab4de8fc237ee2489f3f8caee77b0e3ef530cf4aac03d445"
+    pypy_version = "7.3.14"
+    pypy2_7_sha256 = "d45aea65695a5d15e05305605799713eb09b663c4a56cc9a30ab657244b5e22d"
     pypy3_8_sha256 = "35786fd68e58330a888adc4c1edc65f4d67d47d21cf090bad406196403f4adcf"
-    pypy3_9_sha256 = "52857411c710cd9aced93687cf53f5cfada18cb2a4c43ffa4c83ef27c7a3b58e"
-    pypy3_10_sha256 = "3a8cca1d37c2bcfcb788ed06cdda414e78748034c04b0dfd42e239fc0e4edcbb"
+    pypy3_9_sha256 = "923c33782ed7c40ec5166f938bc3583cd717d81ee56d483d304cdbdf7e9af276"
+    pypy3_10_sha256 = "19df1d7bb9facf466756e596d3b88e9bdda5e106447487517088c76c56e3b901"
 
     python2_pip_version = "20.3.4"
     python2_pip_sha256 = "217ae5161a0e08c0fb873858806e3478c9775caffce5168b50ec885e358c199d"
     python2_pip_whl_name = "pip-20.3.4-py2.py3-none-any.whl"
     python2_pip_downlaod_url = "https://files.pythonhosted.org/packages/27/79/8a850fe3496446ff0d584327ae44e7500daf6764ca1a382d2d02789accf7/pip-20.3.4-py2.py3-none-any.whl"
 
-    python3_pip_version = "23.1.2"
-    python3_pip_sha256 = "3ef6ac33239e4027d9a5598a381b9d30880a1477e50039db2eac6e8a8f6d1b18"
-    python3_pip_whl_name = "pip-23.1.2-py3-none-any.whl"
-    python3_pip_downlaod_url = "https://files.pythonhosted.org/packages/08/e3/57d4c24a050aa0bcca46b2920bff40847db79535dc78141eb83581a52eb8/pip-23.1.2-py3-none-any.whl"
+    python3_pip_version = "23.3.2"
+    python3_pip_sha256 = "5052d7889c1f9d05224cd41741acb7c5d6fa735ab34e339624a614eaaa7e7d76"
+    python3_pip_whl_name = "pip-23.3.2-py3-none-any.whl"
+    python3_pip_downlaod_url = "https://files.pythonhosted.org/packages/15/aa/3f4c7bcee2057a76562a5b33ecbd199be08cdb4443a02e26bd2c3cf6fc39/pip-23.3.2-py3-none-any.whl"
 
     pycparser_version = "2.21"
     pycparser_whl_name = "pycparser-2.21-py2.py3-none-any.whl"

@@ -15,7 +15,6 @@ WORKDIR /tmp/python2
 RUN set -eux; \
     apk add --no-cache \
     expat-dev \
-    openssl1.1-compat-dev \
     zlib-dev \
     ncurses-dev \
     bzip2-dev \
@@ -28,6 +27,7 @@ RUN set -eux; \
     make \
     build-base \
     patch; \
+    apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.18/community openssl1.1-compat; \
     curl --silent --location https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz --output python.tar.xz; \
     echo ${PYTHON_SHA512SUM} | sha512sum -c -; \
     tar -xf python.tar.xz; \
@@ -58,11 +58,10 @@ RUN set -eux; \
     expat \
     gdbm \
     libbz2 \
-    libcrypto1.1 \
     libffi \
-    libssl1.1 \
     musl \
     ncurses-libs \
     readline \
     sqlite-libs \
-    zlib
+    zlib; \
+    apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.18/community libssl1.1 libcrypto1.1

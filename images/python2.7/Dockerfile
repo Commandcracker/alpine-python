@@ -27,7 +27,7 @@ RUN set -eux; \
     make \
     build-base \
     patch; \
-    apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.18/community openssl1.1-compat; \
+    apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.18/community openssl1.1-compat-dev; \
     curl --silent --location https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz --output python.tar.xz; \
     echo ${PYTHON_SHA512SUM} | sha512sum -c -; \
     tar -xf python.tar.xz; \

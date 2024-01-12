@@ -300,7 +300,7 @@ def main() -> None:
         },
         # pypy3.8
         "alpine-pypy3.8": {
-            "path": "images/pypy",
+            "path": "images/pypy3.8",
             "args": {
                 "BASE_IMAGE": "alpine-pypy2.7-pycparser",
                 "PYTHON_VERSION": "3.8",
